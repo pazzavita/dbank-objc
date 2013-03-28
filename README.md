@@ -1,4 +1,4 @@
-﻿Dbank SDK Objective-C
+Dbank SDK Objective-C
 =====================
 封装了基本的dbank api,第三方开发者可基于它开发网盘应用
 * * *
@@ -16,35 +16,39 @@ How to use
 *	包含头文件和引用链接库**nspclient.dylib**
 <pre><code>
 #import "NSPClient.h"
-#import "Vfs.h"
-#import "User.h"
+#import "NSPVFS.h"
+#import "NSPUser.h"
 </code></pre>
 
 *   创建nspclient对象（使用鉴权sid与secret）
 <pre><code>
-NSPClient *nc = [[[NSPClient alloc]
-                          initWith:@"iuTeAN9uaQ6xYuCt8f7uaL4Hwua5CgiU2J0kYJq01KtsA4DY" 
-                          And:@"c94f61061b46668c25d377cead92f898"] autorelease];
+NSPClient *client = [[[NSPClient alloc]
+                      initWithSessionID:@"yuusgcYuCJwqkuuHa0NuTiEN5YaFKu6-MNqTllntlEgGYQY3"
+                      andSessionSecret:@"132fbd785d6dc2fd1ffd66b8bb5c5eb3"]
+                     autorelease];
 </code></pre>
 
 *   调用网盘Vfs/User服务
 <pre><code>
-Vfs *vfs = [nc service:[Vfs alloc]]; 
+NSPVFS *vfs = [client  vfsService];
+id res;
+        
 NSArray *fields = [NSArray arrayWithObjects:@"name",@"url",@"size",@"type",nil];
-id res = [vfs lsdir:@"/Netdisk/" With:fields And:[NSNumber numberWithInt:3]];
-NSLog(@"lsdir = %@",res);
+        
+res = [vfs listDirectory:NSPNetDiskRoot withFields:fields];
+NSLog(@"listDirectory = %@",res);
 </code></pre>
 
 *   上传一个文件到dbank
 <pre><code>
-NSArray *files = [NSArray arrayWithObjects:@"/Users/penjin/Projects/a.txt",nil];
-res = [nc upload:@"/Netdisk/" With:files];
+res = [client uploadFile:@"/Users/DF/a.txt" toPath:NSPNetDiskRoot];
 NSLog(@"upload = %@",res);
 </code></pre>
 
 *	从网盘下载文件
 <pre><code>
-BOOL dl = [nc download:@"/Netdisk/a.txt" To:@"/Users/penjin/a.txt"];
+BOOL dl = [client downloadFile:[NSPNetDiskRoot stringByAppendingPathComponent:@"a.txt"]
+                      intoPath:@"/Users/DF/a.dl.txt"];
 NSLog(@"download = %d",dl);
 </code></pre>
 
