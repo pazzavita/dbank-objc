@@ -23,18 +23,16 @@ How to use
 *   创建nspclient对象（使用鉴权sid与secret）
 <pre><code>
 NSPClient *client = [[[NSPClient alloc]
-                      initWithSessionID:@"yuusgcYuCJwqkuuHa0NuTiEN5YaFKu6-MNqTllntlEgGYQY3"
-                      andSessionSecret:@"132fbd785d6dc2fd1ffd66b8bb5c5eb3"]
-                     autorelease];
+                          initWithSessionID:@"yuusgcYuCJwqkuuHa0NuTiEN5YaFKu6-MNqTllntlEgGYQY3"
+                          andSessionSecret:@"132fbd785d6dc2fd1ffd66b8bb5c5eb3"]
+                         autorelease];
 </code></pre>
 
 *   调用网盘Vfs/User服务
 <pre><code>
 NSPVFS *vfs = [client  vfsService];
 id res;
-        
 NSArray *fields = [NSArray arrayWithObjects:@"name",@"url",@"size",@"type",nil];
-        
 res = [vfs listDirectory:NSPNetDiskRoot withFields:fields];
 NSLog(@"listDirectory = %@",res);
 </code></pre>
