@@ -8,37 +8,36 @@
 
 #import <Foundation/Foundation.h>
 #import "NSPClient.h"
-#import "Vfs.h"
-#import "User.h"
+#import "NSPVFS.h"
+#import "NSPUser.h"
 
 int main(int argc, const char * argv[])
 {
     
     @autoreleasepool {
+        /* 初始化nspclient对象 */
+        NSPClient *client = [[[NSPClient alloc]
+                              initWithSessionID:@"yuusgcYuCJwqkuuHa0NuTiEN5YaFKu6-MNqTllntlEgGYQY3"
+                              andSessionSecret:@"132fbd785d6dc2fd1ffd66b8bb5c5eb3"]
+                             autorelease];
         
-        //初始化nspclient对象
-        NSPClient *nc = [[[NSPClient alloc]
-                          initWith:@"iuTeAN9uaQ6xYuCt8f7uaL4Hwua5CgiU2J0kYJq01KtsA4DY" 
-                          And:@"c94f61061b46668c25d377cead92f898"] autorelease];
-        
-        //调用Vfs服务显示文件目录
-        Vfs *vfs = [nc service:[Vfs alloc]];
+        /* 调用Vfs服务显示文件目录 */
+        NSPVFS *vfs = [client  vfsService];
+        id res;
         
         NSArray *fields = [NSArray arrayWithObjects:@"name",@"url",@"size",@"type",nil];
-        NSNumber *num = [NSNumber numberWithInt:3];
         
-        id res = [vfs lsdir:@"/Netdisk/" With:fields And:num];
-        NSLog(@"lsdir = %@",res);
+        res = [vfs listDirectory:NSPNetDiskRoot withFields:fields];
+        NSLog(@"listDirectory = %@",res);
         
-        //上传文件到Dbank
-        NSArray *files = [NSArray arrayWithObjects:@"/Users/penjin/Projects/a.txt",nil];
-        res = [nc upload:@"/Netdisk/" With:files];
+        /* 上传文件到Dbank */
+        res = [client uploadFile:@"/Users/DF/a.txt" toPath:NSPNetDiskRoot];
         NSLog(@"upload = %@",res);
         
-        //从Dbank下载文件到本地磁盘
-        BOOL dl = [nc download:@"/Netdisk/a.txt" To:@"/Users/penjin/a.txt"];
+        /* 从Dbank下载文件到本地磁盘 */
+        BOOL dl = [client downloadFile:[NSPNetDiskRoot stringByAppendingPathComponent:@"a.txt"]
+                              intoPath:@"/Users/DF/a.dl.txt"];
         NSLog(@"download = %d",dl);
-        
     }
     return 0;
 }

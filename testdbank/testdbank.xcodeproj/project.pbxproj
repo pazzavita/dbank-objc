@@ -37,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A31E4F1D17043B0100AF9B53 /* NSPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = NSPUser.h; path = "../dbank-objc/dbank-objc/NSP/NSPUser.h"; sourceTree = "<group>"; };
+		A31E4F1E17043B0100AF9B53 /* NSPVFS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = NSPVFS.h; path = "../dbank-objc/dbank-objc/NSP/NSPVFS.h"; sourceTree = "<group>"; };
 		A502684415C6D14A003408F9 /* testdbank */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testdbank; sourceTree = BUILT_PRODUCTS_DIR; };
 		A502684815C6D14A003408F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A502684B15C6D14A003408F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,8 +46,6 @@
 		A502684F15C6D14A003408F9 /* testdbank.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = testdbank.1; sourceTree = "<group>"; };
 		A502688415C6D233003408F9 /* dbank-objc.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "dbank-objc.xcodeproj"; path = "../dbank-objc/dbank-objc.xcodeproj"; sourceTree = "<group>"; };
 		A502689015C6D36B003408F9 /* NSPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSPClient.h; path = "../dbank-objc/dbank-objc/nsp/NSPClient.h"; sourceTree = "<group>"; };
-		A502689115C6D36B003408F9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = "../dbank-objc/dbank-objc/nsp/User.h"; sourceTree = "<group>"; };
-		A502689215C6D36B003408F9 /* Vfs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Vfs.h; path = "../dbank-objc/dbank-objc/nsp/Vfs.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 		A502683915C6D14A003408F9 = {
 			isa = PBXGroup;
 			children = (
-				A502689315C6D3FF003408F9 /* nsp */,
+				A502689315C6D3FF003408F9 /* NSP */,
 				A502684A15C6D14A003408F9 /* testdbank */,
 				A502684715C6D14A003408F9 /* Frameworks */,
 				A502684515C6D14A003408F9 /* Products */,
@@ -114,14 +114,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A502689315C6D3FF003408F9 /* nsp */ = {
+		A502689315C6D3FF003408F9 /* NSP */ = {
 			isa = PBXGroup;
 			children = (
 				A502689015C6D36B003408F9 /* NSPClient.h */,
-				A502689115C6D36B003408F9 /* User.h */,
-				A502689215C6D36B003408F9 /* Vfs.h */,
+				A31E4F1D17043B0100AF9B53 /* NSPUser.h */,
+				A31E4F1E17043B0100AF9B53 /* NSPVFS.h */,
 			);
-			name = nsp;
+			name = NSP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

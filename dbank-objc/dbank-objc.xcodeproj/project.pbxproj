@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A31E4F1917043AEE00AF9B53 /* NSPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A31E4F1517043AEE00AF9B53 /* NSPUser.m */; };
+		A31E4F1B17043AEE00AF9B53 /* NSPVFS.m in Sources */ = {isa = PBXBuildFile; fileRef = A31E4F1717043AEE00AF9B53 /* NSPVFS.m */; };
 		A502679615C6CD53003408F9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A502679515C6CD53003408F9 /* Cocoa.framework */; };
 		A502681315C6CE8A003408F9 /* ASICacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A50267ED15C6CE8A003408F9 /* ASICacheDelegate.h */; };
 		A502681415C6CE8A003408F9 /* ASIDataCompressor.h in Headers */ = {isa = PBXBuildFile; fileRef = A50267EE15C6CE8A003408F9 /* ASIDataCompressor.h */; };
@@ -34,10 +36,6 @@
 		A502682A15C6CE8A003408F9 /* MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = A502680A15C6CE8A003408F9 /* MD5.m */; };
 		A502682B15C6CE8A003408F9 /* NSPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = A502680D15C6CE8A003408F9 /* NSPClient.h */; };
 		A502682C15C6CE8A003408F9 /* NSPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A502680E15C6CE8A003408F9 /* NSPClient.m */; };
-		A502682D15C6CE8A003408F9 /* User.h in Headers */ = {isa = PBXBuildFile; fileRef = A502680F15C6CE8A003408F9 /* User.h */; };
-		A502682E15C6CE8A003408F9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = A502681015C6CE8A003408F9 /* User.m */; };
-		A502682F15C6CE8A003408F9 /* Vfs.h in Headers */ = {isa = PBXBuildFile; fileRef = A502681115C6CE8A003408F9 /* Vfs.h */; };
-		A502683015C6CE8A003408F9 /* Vfs.m in Sources */ = {isa = PBXBuildFile; fileRef = A502681215C6CE8A003408F9 /* Vfs.m */; };
 		A502683115C6CED9003408F9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A502679915C6CD53003408F9 /* CoreData.framework */; };
 		A502683215C6CEE2003408F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A502679A15C6CD53003408F9 /* Foundation.framework */; };
 		A502683415C6CEEF003408F9 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A502683315C6CEEF003408F9 /* libz.1.dylib */; };
@@ -45,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A31E4F1417043AEE00AF9B53 /* NSPUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = NSPUser.h; path = "dbank-objc/NSP/NSPUser.h"; sourceTree = SOURCE_ROOT; };
+		A31E4F1517043AEE00AF9B53 /* NSPUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSPUser.m; path = "dbank-objc/NSP/NSPUser.m"; sourceTree = SOURCE_ROOT; };
+		A31E4F1617043AEE00AF9B53 /* NSPVFS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.objj.h; name = NSPVFS.h; path = "dbank-objc/NSP/NSPVFS.h"; sourceTree = SOURCE_ROOT; };
+		A31E4F1717043AEE00AF9B53 /* NSPVFS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSPVFS.m; path = "dbank-objc/NSP/NSPVFS.m"; sourceTree = SOURCE_ROOT; };
 		A502679215C6CD53003408F9 /* nspclient.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = nspclient.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		A502679515C6CD53003408F9 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A502679815C6CD53003408F9 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -79,10 +81,6 @@
 		A502680B15C6CE8A003408F9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		A502680D15C6CE8A003408F9 /* NSPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPClient.h; sourceTree = "<group>"; };
 		A502680E15C6CE8A003408F9 /* NSPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPClient.m; sourceTree = "<group>"; };
-		A502680F15C6CE8A003408F9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		A502681015C6CE8A003408F9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		A502681115C6CE8A003408F9 /* Vfs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vfs.h; sourceTree = "<group>"; };
-		A502681215C6CE8A003408F9 /* Vfs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vfs.m; sourceTree = "<group>"; };
 		A502683315C6CEEF003408F9 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = usr/lib/libz.1.dylib; sourceTree = SDKROOT; };
 		A502683515C6CEFB003408F9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -146,7 +144,7 @@
 			children = (
 				A50267EC15C6CE8A003408F9 /* Classes */,
 				A502680315C6CE8A003408F9 /* lib */,
-				A502680C15C6CE8A003408F9 /* nsp */,
+				A502680C15C6CE8A003408F9 /* NSP */,
 				A502679C15C6CD53003408F9 /* Supporting Files */,
 			);
 			path = "dbank-objc";
@@ -232,16 +230,17 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
-		A502680C15C6CE8A003408F9 /* nsp */ = {
+		A502680C15C6CE8A003408F9 /* NSP */ = {
 			isa = PBXGroup;
 			children = (
 				A502680D15C6CE8A003408F9 /* NSPClient.h */,
 				A502680E15C6CE8A003408F9 /* NSPClient.m */,
-				A502680F15C6CE8A003408F9 /* User.h */,
-				A502681015C6CE8A003408F9 /* User.m */,
-				A502681115C6CE8A003408F9 /* Vfs.h */,
-				A502681215C6CE8A003408F9 /* Vfs.m */,
+				A31E4F1417043AEE00AF9B53 /* NSPUser.h */,
+				A31E4F1517043AEE00AF9B53 /* NSPUser.m */,
+				A31E4F1617043AEE00AF9B53 /* NSPVFS.h */,
+				A31E4F1717043AEE00AF9B53 /* NSPVFS.m */,
 			);
+			name = NSP;
 			path = nsp;
 			sourceTree = "<group>";
 		};
@@ -267,8 +266,6 @@
 				A502682715C6CE8A003408F9 /* JSONKit.h in Headers */,
 				A502682915C6CE8A003408F9 /* MD5.h in Headers */,
 				A502682B15C6CE8A003408F9 /* NSPClient.h in Headers */,
-				A502682D15C6CE8A003408F9 /* User.h in Headers */,
-				A502682F15C6CE8A003408F9 /* Vfs.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,8 +330,8 @@
 				A502682815C6CE8A003408F9 /* JSONKit.m in Sources */,
 				A502682A15C6CE8A003408F9 /* MD5.m in Sources */,
 				A502682C15C6CE8A003408F9 /* NSPClient.m in Sources */,
-				A502682E15C6CE8A003408F9 /* User.m in Sources */,
-				A502683015C6CE8A003408F9 /* Vfs.m in Sources */,
+				A31E4F1917043AEE00AF9B53 /* NSPUser.m in Sources */,
+				A31E4F1B17043AEE00AF9B53 /* NSPVFS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

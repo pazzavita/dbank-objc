@@ -1,31 +1,50 @@
 //
 //  NSPClient.h
-//  dbank-sdk-objc
+//  dbank-objc
 //
-//  Created by Ciaos on 12-7-26.
-//  Copyright 2012 Ciaos House. All rights reserved.
+//  Created by 江宇英 on 13-3-27.
+//
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
+
+extern NSString *NSPVFSUpAuth;;
+extern NSString *NSPVFSMkFile;
+extern NSString *NSPVFSGetAttr;
+extern NSString *NSPVFSLsDir;
+extern NSString *NSPVFSCopyFile;
+extern NSString *NSPVFSMoveFile;
+extern NSString *NSPVFSRmFile;
+
+extern NSString *NSPNetDiskRoot;
 
 @interface NSPClient : NSObject {
-	bool sysLevel;
-	
-	NSString *sid;
-	NSString *secret;
+	BOOL sysLevel;
+    
+	NSString *sessionID_;
+	NSString *sessionSecret_;
 }
 
-@property (nonatomic,retain) NSString *sid;
-@property (nonatomic,retain) NSString *secret;
+@property (nonatomic, copy) NSString *sessionID;
+@property (nonatomic, copy) NSString *secret;
 
--(NSPClient *)initWith:(NSString *)ses And:(NSString *)sec;
++ (NSString *)authURLForAppID:(NSString *)anAppID;
 
--(id)upload:(NSString *)dirpath With:(NSArray *)files;
+- (NSPClient *)initWithSessionID:(NSString *)aSessionId
+                andSessionSecret:(NSString *)aSessionSecret;
 
--(bool)download:(NSString *)objfile To:(NSString *)savename;
+- (id)uploadFile:(NSString *)aFilepath
+          toPath:(NSString *)aPath;
+- (id)uploadFiles:(NSArray *)files
+           toPath:(NSString *)aPath;
 
--(id)callService:(NSString *)srvname With:(id)params;
+- (BOOL)downloadFile:(NSString *)aFilepath
+            intoPath:(NSString *)aLocalFilepath;
 
--(id)service:(id)srv;
+- (id)callService:(NSString *)aServiceName
+   withParameters:(id)parameters;
+
+- (id)vfsService;
+- (id)userService;
 
 @end
